@@ -1,0 +1,53 @@
+
+<script src="https://tryhackme.com/badge/56430"></script>
+
+
+      <style>
+        .libutton {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 7px;
+          text-align: center;
+          outline: none;
+          text-decoration: none !important;
+          color: #ffffff !important;
+          width: 200px;
+          height: 32px;
+          border-radius: 16px;
+          background-color: #0A66C2;
+          font-family: "SF Pro Text", Helvetica, sans-serif;
+        }
+      </style>
+<a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=richarqq" target="_blank">Follow on LinkedIn</a>
+
+
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<div x-data="{ show: false }">
+  <!-- Formulario -->
+  <form @submit.prevent="show = true; setTimeout(() => show = false, 1000)">
+      <input type="text" placeholder="Nombre">
+      <button type="submit">Enviar</button>
+  </form>
+
+  <!-- Notificación -->
+  <div x-show="show" class="bg-green-500 text-white p-3 mt-2 rounded">
+      ¡Formulario enviado con éxito!
+  </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="charon51/charon511"
+        data-repo-id="R_kgDOLmkedA"
+        data-category-id="DIC_kwDOLmkedM4CiHyb"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
