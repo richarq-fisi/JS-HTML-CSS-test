@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Listado de Clientes</h2>
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Buscar por nombre..." onkeyup="searchFunction()">
+    
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody id="clientTable">
+            <tr>
+                <td>1</td>
+                <td>Pedro Morales M.</td>
+                <td>pedrom@gmail.com</td>
+                <td>987834111</td>
+                <td>Lima, Perú</td>
+                <td>
+                    <button class="btn btn-primary">Editar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Claudio Perez J.</td>
+                <td>claudiop@hotmail.com</td>
+                <td>980234189</td>
+                <td>París, Francia</td>
+                <td>
+                    <button class="btn btn-primary">Editar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Melissa Mendoza S.</td>
+                <td>melissam@outlook.com</td>
+                <td>873409342</td>
+                <td>Bogotá, Colombia</td>
+                <td>
+                    <button class="btn btn-primary">Editar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function searchFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("clientTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }       
+    }
+}
+</script>
+
+</body>
+</html>
